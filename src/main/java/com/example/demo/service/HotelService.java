@@ -1,5 +1,9 @@
-package com.example.demo;
+package com.example.demo.service;
 
+import com.example.demo.model.Address;
+import com.example.demo.model.Hotel;
+import com.example.demo.model.Review;
+import com.example.demo.repository.HotelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -9,12 +13,10 @@ import java.util.Arrays;
 import java.util.List;
 
 @Component
-public class DBsender implements CommandLineRunner {
+public class HotelService implements CommandLineRunner {
     @Autowired
     private HotelRepository hotelRepository;
-    public DBsender(HotelRepository hotelRepository){
-        this.hotelRepository=hotelRepository;
-    }
+
     @Override
     public void run(String... strings) throws Exception{
         Hotel marriot=new Hotel(
