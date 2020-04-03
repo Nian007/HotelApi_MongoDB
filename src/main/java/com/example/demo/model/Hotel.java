@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.IndexDirection;
@@ -11,13 +12,16 @@ import java.util.List;
 @Document(collection = "Hotels")
 @Data
 public class Hotel {
-  @Id private String id;
+  @Id
+  private String id;
   private String name;
   @Indexed(direction = IndexDirection.ASCENDING)
   private int pricePerNight;
   private Address address;
   private List<Review> reviews;
+  public Hotel(){
 
+  }
   public Hotel(String name, int pricePerNight, Address address, List<Review> reviews) {
     this.name = name;
     this.pricePerNight = pricePerNight;

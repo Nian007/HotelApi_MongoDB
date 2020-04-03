@@ -19,6 +19,8 @@ repositories {
 }
 
 dependencies {
+	compile "com.mysema.querydsl:querydsl-apt:3.6.3:jpa"
+	compile "com.querydsl.apt:querydsl-mongodb:4.0.9"
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
